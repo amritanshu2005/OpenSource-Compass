@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Beginner’s Guide to Open Source</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #1F3C88;
+            --secondary-blue: #4D96FF;
+            --light-gray: #F5F7FA;
+            --text-dark: #2E2E2E;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        header {
+            border-bottom: 1px solid #eaeaea;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: var(--primary-blue);
+            font-size: 22px;
+        }
+
+        nav a {
+            margin-left: 24px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .hero {
+            background-color: var(--light-gray);
+            padding: 72px 8%;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 64px 8%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .step {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .step span {
+            font-weight: 700;
+            color: var(--secondary-blue);
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 24px;
+            margin-top: 40px;
+        }
+
+        /* ---------- Dark Mode ---------- */
+        .dark-mode {
+            background-color: #0f172a;
+            color: #e5e7eb;
+        }
+
+        .dark-mode .hero,
+        .dark-mode section,
+        .dark-mode .step {
+            background-color: #111827;
+        }
+
+        .dark-mode h1,
+        .dark-mode h2,
+        .dark-mode h3 {
+            color: #93c5fd;
+        }
+
+        .dark-mode nav a {
+            color: #e5e7eb;
+        }
+
+        /* ---------- Theme Toggle Button ---------- */
+        .theme-toggle {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--secondary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-blue);
+        }
+
+        /* ---------- Scroll To Top ---------- */
+        .scroll-top {
+            position: fixed;
+            bottom: 24px;
+            right: 84px;
+            display: none;
+            background: #e5e7eb;
+            color: #1f2937;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .scroll-top:hover {
+            background: #d1d5db;
+        }
+
+        .step {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <h1>OpenSource Compass</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="guides.html">Guides</a>
+            <a href="programs.html">Programs</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contribute.html">Contribute</a>
+        </nav>
+        
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>Beginner’s Guide to Open Source</h2>
+        <p>
+            New to open source? This page will help you understand what open source is,
+            how to get started, and how to use the guides and programs on this site step by step.
+        </p>
+    </div>
+
+    <!-- Content -->
+    <section>
+        <h3>What is Open Source?</h3>
+        <p>
+            Open source means the source code of a project is publicly available for anyone
+            to view, use, improve, and share. Contributors from around the world collaborate
+            to build software in the open.
+        </p>
+
+        <h3>How to Use This Website</h3>
+
+        <div class="step">
+            <span>Step 1:</span> Learn the basics
+            <p>
+                Start by understanding basic concepts like repositories, issues, pull requests,
+                and version control (Git).
+            </p>
+        </div>
+
+        <div class="step">
+            <span>Step 2:</span> Explore beginner-friendly programs
+            <p>
+                Visit the Programs page to discover initiatives like GSSoC, Hacktoberfest,
+                and Outreachy that welcome new contributors.
+            </p>
+        </div>
+
+        <div class="step">
+            <span>Step 3:</span> Pick one program and read its guide
+            <p>
+                Each program page explains eligibility, timelines, and how to apply or contribute.
+                Focus on one program at a time.
+            </p>
+        </div>
+
+        <div class="step">
+            <span>Step 4:</span> Make your first contribution
+            <p>
+                Start small: fix documentation, improve UI, or resolve beginner-friendly issues.
+                Every contribution counts.
+            </p>
+        </div>
+
+        <h3>What Should I Do Next?</h3>
+        <p>
+            Once you feel comfortable with the basics, head back to the Programs page and
+            choose a program that matches your experience level and goals.
+        </p>
+
+        <a href="programs.html" class="btn btn-outline-primary mt-3">
+            Explore Open Source Programs →
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2025 OpenSource Compass • Built for the Open Source Community</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        // Theme toggle
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            themeToggle.textContent =
+                document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        });
+
+        // Scroll-to-top visibility
+        window.addEventListener("scroll", () => {
+            scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+
+        // Scroll-to-top action
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+</html>
