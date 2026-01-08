@@ -1,6 +1,126 @@
 // Load programs data
 let programs = [];
 
+// Google Calendar Integration Functions
+/**
+ * Format date to YYYYMMDD for Google Calendar
+ * @param {string|Date} dateString - Date string or Date object
+ * @returns {string} Formatted date in YYYYMMDD format
+ */
+function formatDateForCalendar(dateString) {
+    // Extract date from timeline string (e.g., "May - August" or "October 1-31")
+    const today = new Date();
+    let year = today.getFullYear();
+    
+    // Try to extract month from timeline
+    const monthNames = ["January", "February", "March", "April", "May", "June", 
+                       "July", "August", "September", "October", "November", "December"];
+    
+    let month = null;
+    let day = "01";
+    
+    // Check if timeline contains a specific month
+    for (let i = 0; i < monthNames.length; i++) {
+        if (dateString.includes(monthNames[i])) {
+            month = String(i + 1).padStart(2, '0');
+            
+            // Try to extract day from timeline (e.g., "October 1-31")
+            const dayMatch = dateString.match(/(\d{1,2})(?:\s*[-–]\s*\d{1,2})?/);
+            if (dayMatch) {
+                day = String(dayMatch[1]).padStart(2, '0');
+            }
+            break;
+        }
+    }
+    
+    // If no month found, use current month + 1 as deadline
+    if (!month) {
+        month = String(today.getMonth() + 2).padStart(2, '0');
+        if (parseInt(month) > 12) {
+            month = "01";
+            year++;
+        }
+    }
+    
+    return `${year}${month}${day}`;
+}
+
+/**
+ * Generate Google Calendar URL for program deadlines
+ * @param {Object} program - Program object
+ * @returns {string} Google Calendar URL
+ */
+function generateGoogleCalendarLink(program) {
+    // Get formatted date from timeline
+    const formattedDate = formatDateForCalendar(program.timeline);
+    
+    // For all-day events (deadlines)
+    const startDate = formattedDate + 'T000000';
+    const endDate = formattedDate + 'T235959';
+    
+    const params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: `⏰ Deadline: ${program.name}`,
+        dates: `${startDate}/${endDate}`,
+        details: `Application deadline for ${program.name}.\n\n${program.description}\n\nTimeline: ${program.timeline}\nStipend: ${program.stipend}\nDifficulty: ${program.difficulty}\n\nSet reminder via OpenSource Compass`,
+        location: 'Online',
+        sf: true,
+        output: 'xml'
+    });
+    
+    return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+/**
+ * Add Google Calendar button to program card
+ * @param {HTMLElement} card - Program card element
+ * @param {Object} programData - Program data
+ */
+function addCalendarButtonToCard(card, programData) {
+    // Don't add for completed programs or those without specific timelines
+    if (programData.status === "Completed") {
+        return;
+    }
+    
+    // Check if timeline has date information
+    const hasDateInfo = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)\b/i.test(programData.timeline);
+    
+    if (!hasDateInfo && programData.timeline.toLowerCase().includes("year-round")) {
+        return; // Don't add for year-round programs without specific deadlines
+    }
+    
+    try {
+        // Generate Google Calendar URL
+        const calendarUrl = generateGoogleCalendarLink(programData);
+        
+        // Create calendar button
+        const calendarBtn = document.createElement('button');
+        calendarBtn.className = 'btn btn-calendar';
+        calendarBtn.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+            Add to Calendar
+        `;
+        calendarBtn.title = 'Add deadline to Google Calendar';
+        
+        // Add click event
+        calendarBtn.onclick = function(e) {
+            e.stopPropagation();
+            window.open(calendarUrl, '_blank', 'noopener,noreferrer');
+        };
+        
+        // Find and add to program actions
+        const programActions = card.querySelector('.program-actions');
+        if (programActions) {
+            programActions.appendChild(calendarBtn);
+        }
+        
+    } catch (error) {
+        console.error('Error adding calendar button:', error);
+    }
+}
+
 // Fetch programs data from JSON file
 fetch('programs.json')
     .then(response => response.json())
@@ -231,12 +351,37 @@ function renderPrograms(filteredPrograms = programs) {
         </div>
     </div>
 `).join('');
+
+    // Add calendar buttons to each card
+    filteredPrograms.forEach((program, index) => {
+        const card = container.children[index];
+        if (card) {
+            addCalendarButtonToCard(card, program);
+        }
+    });
 }
 
 // Open Modal
 function openModal(programId) {
     const program = programs.find(p => p.id === programId);
     const modalBody = document.getElementById('modalBody');
+    
+    // Generate calendar URL for modal
+    let calendarButtonHTML = '';
+    if (program.status !== "Completed") {
+        const hasDateInfo = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)\b/i.test(program.timeline);
+        if (hasDateInfo) {
+            const calendarUrl = generateGoogleCalendarLink(program);
+            calendarButtonHTML = `
+                <button class="btn btn-calendar" onclick="window.open('${calendarUrl}', '_blank', 'noopener,noreferrer')" style="margin-top: 12px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                    </svg>
+                    Add Deadline to Google Calendar
+                </button>
+            `;
+        }
+    }
     
     modalBody.innerHTML = `
         <div class="modal-logo">
@@ -267,6 +412,7 @@ function openModal(programId) {
                     <strong>Open Issues:</strong> <span style="color: var(--secondary-blue);">${program.issues}</span>
                 </div>
             </div>
+            ${calendarButtonHTML}
         </div>
 
         <div class="modal-section">
@@ -283,7 +429,7 @@ function openModal(programId) {
             </ul>
         </div>
 
-        <div style="margin-top: 24px; display: flex; gap: 12px;">
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
             <button class="btn btn-primary" onclick="alert('Redirecting to official website...')">Visit Official Website</button>
             <button class="btn btn-secondary" onclick="alert('Redirecting to GitHub projects...')">Browse GitHub Projects</button>
         </div>
@@ -332,3 +478,6 @@ window.addEventListener('click', function(event) {
         closeModal();
     }
 });
+
+// Close modal with close button
+document.querySelector('.close-btn').addEventListener('click', closeModal);

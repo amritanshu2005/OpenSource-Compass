@@ -1,71 +1,73 @@
 ﻿<div align="center">
 
 # 🌍 OpenSource Compass  
+### Navigate Your Open Source Journey with Confidence
 
-### ✨ Lost in open source? We've got your map! 🗺️
-
-<img src="assets/swoc_banner.png" alt="OpenSource Compass Banner" width="100%"/>
+<img src="assets/updated image.png" alt="OpenSource Compass – SWOC'26 Banner" width="100%" />
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/sayeeg-11/OpenSource-Compass)
 [![GitHub Issues](https://img.shields.io/github/issues/sayeeg-11/OpenSource-Compass)](https://github.com/sayeeg-11/OpenSource-Compass/issues)
 [![GitHub License](https://img.shields.io/github/license/sayeeg-11/OpenSource-Compass)](LICENSE)
-
 </div>
 
----
+## ❄️ Script Winter of Code (SWOC) 2026
 
-## 🚀 What is OpenSource Compass?
-
-Your **ultimate guide** to jumping into the open source world! No fancy jargon. No confusing steps. Just real answers for beginners who want to start contributing and making an impact.
-
-Think of us as your friend who knows all the shortcuts! 🤝
+**Script Winter of Code (SWOC)** is a winter-long open-source program that mentors students through meaningful, real-world contributions.
 
 ---
 
-## 💡 Our Promise
+## 📌 About OpenSource Compass
 
-**We believe:** Every developer deserves a clear path to contributing.
+Your **ultimate beginner-friendly guide** to open source.  
+No jargon. No confusion. Just clear steps to help you start contributing with confidence.
 
-**We deliver:** Simple guides, real examples, and friendly community support to get you started.
+> Think of this as your friendly roadmap into open source 🌱
 
 ---
 
-## 🎯 What You'll Learn Here
+## 🎯 Project Vision & Objectives
+
+- Simplify **Git & GitHub** for beginners  
+- Explain real-world **open-source workflows**  
+- Share **curated learning resources**  
+- Prepare contributors for **SWOC, GSSoC, GSoC & Hacktoberfest**  
+- Foster an **inclusive & welcoming community**
+
+---
+
+## 📖 What You’ll Learn
 
 | 📖 Guides | 🎥 Resources | 💬 Community |
-|-----------|-------------|-----------|
-| Step-by-step tutorials | Video lessons | Support & help |
-| Do's and Don'ts | Articles & tips | Mentorship |
-| Real examples | Learning paths | Making friends |
+|---------|-------------|-------------|
+| Step-by-step tutorials | Video lessons | Peer support |
+| Do’s & Don’ts | Articles & tips | Mentorship |
+| Real examples | Learning paths | Collaboration |
 
 ---
 
-## ✨ Amazing Features
+## ✨ Key Features
 
-🔥 **Beginner Friendly Guides** - No experience needed!
-
-🚀 **Quick Start Instructions** - Get going in 5 minutes
-
-🎓 **Learn Git & GitHub** - From zero to hero
-
-📚 **Tons of Resources** - Videos, articles, everything
-
-🌟 **Program Information** - SWOC, GSSoC, GSoC & more
-
-🤝 **Community Support** - We've got your back!
+- 🔰 **Beginner-friendly guides**  
+- 🚀 **Quick start in under 5 minutes**  
+- 🎓 **Git & GitHub from basics to confidence**  
+- 📚 **Curated videos & articles**  
+- 🌟 **Program info (SWOC, GSSoC, GSoC, etc.)**  
+- 🤝 **Supportive community**
 
 ---
 
-## 💻 What We Use
+## 🛠 Tech Stack
 
-- **HTML5** - Beautiful structure
-- **CSS3** - Stunning design  
-- **JavaScript** - Cool features
-- **JSON** - Smart data handling
+- **HTML5** – Clean & semantic structure  
+- **CSS3** – Modern, responsive styling  
+- **JavaScript** – Interactive functionality  
+- **JSON** – Lightweight data handling  
 
 ---
 
-## 📂 How It's Organized
+## 📂 Project Structure
+
+
 
 ```
 OpenSource-Compass/
@@ -80,28 +82,73 @@ OpenSource-Compass/
 
 ---
 
-## 🎬 Getting Started (Super Easy!)
+## 👥 Team — SWOC’26
 
-### 1️⃣ Fork the Repo
-Click "Fork" on GitHub. Done! ✅
+### 🛠 Project Admin
 
-### 2️⃣ Clone It
-```
-git clone https://github.com/YOUR-USERNAME/OpenSource-Compass.git
-cd OpenSource-Compass
-```
+| Name | Role | GitHub | LinkedIn |
+|----|----|------|---------|
+| **Sayee Gosavi** | Project Admin | [@sayeeg-11](https://github.com/sayeeg-11) | https://linkedin.com/in/sayee-gosavi11|
 
-### 3️⃣ Open & Play
-Double-click `index.html` or use a server. That's it! 🎉
-
-### 4️⃣ Time to Contribute
-Make changes → Test → Push → Create Pull Request ✨
+> Responsible for project direction, reviews, and overall quality.
 
 ---
 
-## 🤝 How to Help (We Need You!)
+### 🧑‍🏫 Mentors
+##
 
-### 💪 Ways to Contribute
+| Name | Role | GitHub | LinkedIn |
+|----|----|------|---------|
+| **Sameera Jape** | Mentor | [@sameera731](https://github.com/sameera731) | https://linkedin.com/in/sameera-jape  |
+| **Satyam Pandey** | Mentor | [@Satyam12x](https://github.com/Satyam12x) | https://linkedin.com/in/satyam-pandey-301061272 |
+| **Gopichand** | Mentor | [@Gooichand](https://github.com/Gooichand) | https://linkedin.com/in/gopichand-d-269709287 |
+
+> Mentors guide contributors, review pull requests, and provide feedback throughout SWOC’26.
+
+---
+
+## 🤝 Contribution Guidelines (SWOC’26)
+
+### How to Contribute
+
+1. Browse the **Issues** section  
+2. Comment on the issue you want to work on  
+3. Wait for assignment  
+4. Create a new branch  
+5. Make your changes  
+6. Open a Pull Request  
+
+📌 **Important Rules**
+- Do **not** create a PR without issue assignment  
+- Keep changes focused and meaningful  
+- Follow mentor feedback and repository guidelines  
+
+📄 refer #23 – Important Contributing Guidelines for OpenSource Compass
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally and start contributing.
+
+### 1️⃣ Fork the Repository
+Click the **Fork** button on GitHub to create a copy under your account.
+
+### 2️⃣ Clone the Repository
+```bash
+git clone https://github.com/YOUR-USERNAME/OpenSource-Compass.git
+cd OpenSource-Compass
+ ```
+### 3️⃣ Run the Project
+Open index.html directly in your browser or use a local development server.
+
+### 4️⃣ Start Contributing
+Make changes → Test → Push → Create Pull Request
+
+
+---
+###  How You Can Contribute ? 
+##
 
 ✏️ Fix typos and improve writing
 
@@ -115,28 +162,25 @@ Make changes → Test → Push → Create Pull Request ✨
 
 ---
 
-## 📋 How to Send Your Changes
-
-**Step 1:** Create your own branch
+### 📋 Submitting Your Changes
+##
+Step 1: Create a New Branch
+```bash
+git checkout -b feature/your-feature-name
 ```
-git checkout -b feature/amazing-idea
-```
-
-**Step 2:** Make your magic! ✨
-
-**Step 3:** Test everything in your browser
-
-**Step 4:** Save your work
-```
+### Step 2: Make Your Changes
+Implement your updates following project guidelines.
+### Step 3: Test Locally
+Ensure everything works correctly before committing.
+### Step 4: Commit Your Work
+```bash
 git add .
-git commit -m "Add something awesome"
+git commit -m "Brief description of your changes"
 ```
-
-**Step 5:** Push to GitHub
+### Step 5: Push to GitHub
+```bash
+git push origin feature/your-feature-name
 ```
-git push origin feature/amazing-idea
-```
-
 **Step 6:** Create a Pull Request
 Go to GitHub and click "Create Pull Request". Done! 🚀
 

@@ -22,6 +22,7 @@
         <a href="../pages/guides.html">Guides</a>
         <a href="programs.html">Programs</a>
         <a href="Resources.html">Resources</a>
+        <a href="faq.html">FAQ</a>
         <a href="#">Contribute</a>
     </nav>
 </header>
@@ -66,8 +67,12 @@
 
 <!-- Footer -->
 <footer>
-    <p>© 2025 OpenSource Compass • Built for the Open Source Community</p>
-</footer>
+        <p>&copy; <span id="current-year">2025</span> OpenSource Compass • Made with ❤️ for the Open Source Community</p>
+    </footer>
+
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 
 <!-- JS -->
 <script src="../Js_scripts/programs.js"></script>

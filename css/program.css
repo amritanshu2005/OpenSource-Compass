@@ -480,3 +480,46 @@ footer p {
         margin-bottom: 20px;
     }
 }
+
+/* Google Calendar Button Styles */
+.btn-calendar {
+    background-color: #1a73e8 !important;
+    color: white !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 16px !important;
+    margin-left: 8px !important;
+}
+
+.btn-calendar:hover {
+    background-color: #0d62d9 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+}
+
+.btn-calendar svg {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Modal calendar button */
+.modal-content .btn-calendar {
+    width: 100%;
+    margin: 12px 0 0 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .program-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .btn-calendar {
+        margin-left: 0 !important;
+        margin-top: 8px !important;
+        width: 100%;
+    }
+}

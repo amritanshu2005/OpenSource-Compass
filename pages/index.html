@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>OpenSource Compass</title>
@@ -7,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
 
     <style>
 /* 1. Global & Background - Applied to the whole page */
@@ -78,6 +80,12 @@
     margin-bottom: 12px;
         }
 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+    border-color: #4D96FF;
+}
+
 .card p {
     color: #ffffff !important;
     line-height: 1.6;
@@ -94,7 +102,7 @@
     border-radius: 20px;
     font-size: 0.8rem;
     margin-top: 10px;
-        }
+}
 
 /* 6. UI Elements */
         #scrollTopBtn {
@@ -111,7 +119,7 @@
     font-size: 20px;
             cursor: pointer;
             display: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -119,11 +127,22 @@
     background-color: #1F3C88;
     transform: translateY(-4px);
 }
-/* Light blue background for the upper hero section */
+
+/* Updated Hero section for perfect centering */
 .hero {
-    background-color: #f0f7ff; /* Soft light blue */
+    background-color: #f0f7ff;
     padding: 80px 20px;
-    text-align: center;
+    text-align: center; /* Centers text and inline elements */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers the button and paragraphs horizontally */
+    justify-content: center; /* Centers content vertically if height is added */
+}
+
+.hero p {
+    max-width: 600px; /* Limits width to keep text readable */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Style for the SWoC Popup */
@@ -155,11 +174,13 @@
 @keyframes slideIn {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
+}
         }
     </style>
 
 </head>
 <body>
+
 
 <header>
     <h1>OpenSource Compass</h1>
@@ -168,116 +189,117 @@
         <a href="guides.html">Guides</a>
         <a href="programs.html">Programs</a>
         <a href="Resources.html">Resources</a>
+        <a href="faq.html">FAQ</a>
         <a href="Contribute.html">Contribute</a>
     </nav>
 </header>
 
 <section class="hero">
     <body>
+
     <div id="live-popup">
         <span>🎉 <strong>SWoC is now LIVE!</strong> Start contributing today.</span>
         <button onclick="this.parentElement.style.display='none'">×</button>
     </div>
 
     <header>
-    <h2 class="fade-in-up" style="transition-delay: 0.1s;">Navigate Your Open Source Journey</h2>
-    <p class="fade-in-up" style="transition-delay: 0.3s;">
-        OpenSource Compass helps beginners understand open source,
-        make their first meaningful contributions, and explore
-        open-source programs with confidence.
-    </p>
-    <button onclick="window.location.href='dashboard.html'">Get Started</button>
-</section>
+        <h1>OpenSource Compass</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="guides.html">Guides</a>
+            <a href="programs.html">Programs</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contribute.html">Contribute</a>
+        </nav>
+    </header>
 
-<section class="modern-section">
-    <div class="section-header">
-        <h3 class="glow-text">🚀 Why OpenSource Compass?</h3>
-        <p class="centered-description">Starting open source can be overwhelming. This platform simplifies the process with structured guidance and best practices.</p>
-    </div>
+    <section class="hero">
+        <h2 class="fade-in-up" style="transition-delay: 0.1s;">Navigate Your Open Source Journey</h2>
+        <p class="fade-in-up" style="transition-delay: 0.3s;">
+            OpenSource Compass helps beginners understand open source,
+            make their first meaningful contributions, and explore
+            open-source programs with confidence.
+        </p>
+        <button onclick="window.location.href='dashboard.html'">Get Started</button>
+    </section>
 
-    <div class="card-grid">
-        <div class="card">
-            <div class="card-icon">🌱</div> 
-            <div class="card-content">
-                <h4>Beginner Friendly</h4>
-                <p>Clear explanations and simple steps for first-time contributors.</p>
-            </div>
+    <section class="modern-section">
+        <div class="section-header">
+            <h3 class="glow-text">🚀 Why OpenSource Compass?</h3>
+            <p class="centered-description">Starting open source can be overwhelming. This platform simplifies the process with structured guidance and best practices.</p>
         </div>
 
-        <div class="card">
-            <div class="card-icon">🎯</div>
-            <div class="card-content">
-                <h4>Best Practices</h4>
-                <p>Learn do’s, don’ts, and how to contribute the right way.</p>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">🌱</div> 
+                <div class="card-content">
+                    <h4>Beginner Friendly</h4>
+                    <p>Clear explanations and simple steps for first-time contributors.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <div class="card-content">
+                    <h4>Best Practices</h4>
+                    <p>Learn do’s, don’ts, and how to contribute the right way.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <div class="card-content">
+                    <h4>Community Driven</h4>
+                    <p>Built by contributors, improved by contributors.</p>
+                </div>
             </div>
         </div>
-        
-        <div class="card">
-            <div class="card-icon">🤝</div>
-            <div class="card-content">
-                <h4>Community Driven</h4>
-                <p>Built by contributors, improved by contributors.</p>
+    </section>
+
+    <section class="programs">
+        <h3>Open Source Programs</h3>
+        <p>Explore ongoing and upcoming open-source programs with timelines and official resources.</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>Social Winter of Code</h4>
+                <p>Beginner-focused winter open-source program.</p><br><br>
+                <span class="badge">Upcoming</span>
             </div>
-        </div>
-    </div>
-        </section>
-
-<section class="programs">
-    <h3>Open Source Programs</h3>
-    <p>Explore ongoing and upcoming open-source programs with timelines and official resources.</p>
-
-            <div class="card-grid">
-                <div class="card">
-            <h4>Social Winter of Code</h4>
-            <p>Beginner-focused winter open-source program.</p><br><br>
-            <span class="badge">Upcoming</span>
-                </div>
-                <div class="card">
-            <h4>GirlScript Summer of Code</h4>
-            <p>Large-scale open-source program for students.</p><br><br>
-            <span class="badge">Annual</span>
-                </div>
-                <div class="card">
-            <h4>Google Summer of Code</h4>
-            <p>Global program for advanced contributors.</p><br><br>
-            <span class="badge">Advanced</span>
-                </div>
-
-                <div class="card">
-            <h4>Hacktoberfest (by DigitalOcean)</h4>
-            <p>Global event encouraging first-time open-source participation.</p>
-            <span class="badge">Beginner</span>
-                </div>
-
-        <div class="card">
-            <h4>Winter of Code (WoC)</h4>
-            <p>Mentorship-based program for student contributors.</p><br>
-            <span class="badge">Intermediate</span>
+            <div class="card">
+                <h4>GirlScript Summer of Code</h4>
+                <p>Large-scale open-source program for students.</p><br><br>
+                <span class="badge">Annual</span>
             </div>
-
-        <div class="card">
-            <h4>Social Summer of Code (SSoC)</h4>
-            <p>Community-driven program for open-source beginners.</p>
-            <span class="badge">Beginner</span>
-                </div>
-
-        <div class="card">
-            <h4>Outreachy</h4>
-            <p>Paid internship program for underrepresented contributors.</p>
-            <span class="badge">Intermediate</span>
-                </div>
-
-        <div class="card">
-            <h4>Linux Foundation Mentorship Program</h4>
-            <p>Industry-backed program for open-source development.</p>
-            <span class="badge">Intermediate</span>
-                </div>
+            <div class="card">
+                <h4>Google Summer of Code</h4>
+                <p>Global program for advanced contributors.</p><br><br>
+                <span class="badge">Advanced</span>
+            </div>
+            <div class="card">
+                <h4>Hacktoberfest (by DigitalOcean)</h4>
+                <p>Global event encouraging first-time open-source participation.</p>
+                <span class="badge">Beginner</span>
+            </div>
+            <div class="card">
+                <h4>Winter of Code (WoC)</h4>
+                <p>Mentorship-based program for student contributors.</p><br>
+                <span class="badge">Intermediate</span>
+            </div>
+            <div class="card">
+                <h4>Social Summer of Code (SSoC)</h4>
+                <p>Community-driven program for open-source beginners.</p>
+                <span class="badge">Beginner</span>
             </div>
         </section>
 
 <footer>
-    <p>© 2025 OpenSource Compass • Built for the Open Source Community</p>
-</footer>
+        <p>&copy; <span id="current-year">2025</span> OpenSource Compass • Made with ❤️ for the Open Source Community</p>
+    </footer>
+
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 
 <button id="scrollTopBtn" title="Go to top">↑</button>
 
