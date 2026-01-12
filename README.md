@@ -3,7 +3,7 @@
 # 🌍 OpenSource Compass  
 ### Navigate Your Open Source Journey with Confidence
 
-<img src="assets/updated image.png" alt="OpenSource Compass – SWOC'26 Banner" width="100%" />
+<img src="frontend/library/assets/swoc_banner.png" alt="OpenSource Compass – SWOC'26 Banner" width="100%" />
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/sayeeg-11/OpenSource-Compass)
 [![GitHub Issues](https://img.shields.io/github/issues/sayeeg-11/OpenSource-Compass)](https://github.com/sayeeg-11/OpenSource-Compass/issues)
